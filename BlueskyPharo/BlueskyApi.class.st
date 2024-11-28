@@ -47,6 +47,27 @@ BlueskyApi >> feedForHandle: handle withApikey: apikey andLimit: maxPosts [
 ]
 
 { #category : 'feed' }
+BlueskyApi >> postText: text onDid: did withApikey: apikey [
+
+	| client |
+	client := ZnClient new forJsonREST.
+	client url: 'https://bsky.social/xrpc/com.atproto.repo.createRecord'.
+	client contents: (Dictionary new
+			 at: 'collection' put: 'app.bsky.feed.post';
+			 at: 'repo' put: did;
+			 at: 'record' put: (Dictionary new
+					  at: 'text' put: text;
+					  at: 'type' put: 'app.bsky.feed.post';
+					  at: 'createdAt' put: DateAndTime now asString;
+					  yourself);
+			 yourself).
+	client headerAt: 'Authorization' put: 'Bearer ' , apikey.
+	client post.
+	client isSuccess ifFalse: [ ^ nil ].
+	^ client contents
+]
+
+{ #category : 'feed' }
 BlueskyApi >> textSummaryFeedForHandle: handle withApikey: apikey andLimit: maxPosts [
 
 	^(self feedForHandle: handle withApikey: apikey andLimit: maxPosts) collect: [ :each |
