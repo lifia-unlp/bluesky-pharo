@@ -1,7 +1,7 @@
 # bluesky-pharo
 Bluesky API for Pharo Smalltalk
 
-```
+```Smalltalk
 Metacello new
 	baseline: 'BlueskyPharo';
 	repository: 'github://lifia-unlp/bluesky-pharo:main';
@@ -14,7 +14,7 @@ Metacello new
 
 Inspirado en https://gist.github.com/pojntfx/72403066a96593c1ba8fd5df2b531f2d
 
-```
+```Smalltalk
 "Obtener el did handle"
 did := BlueskyApi new didForHandle: 'el.casco.com.ar'.
 
