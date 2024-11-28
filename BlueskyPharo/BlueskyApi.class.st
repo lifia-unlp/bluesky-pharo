@@ -1,8 +1,8 @@
 Class {
 	#name : 'BlueskyApi',
 	#superclass : 'Object',
-	#category : 'Bluesky-API',
-	#package : 'Bluesky-API'
+	#category : 'BlueskyPharo',
+	#package : 'BlueskyPharo'
 }
 
 { #category : 'session-handling' }

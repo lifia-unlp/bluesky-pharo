@@ -1,8 +1,8 @@
 Class {
 	#name : 'BaselineOfBlueskyAPI',
 	#superclass : 'BaselineOf',
-	#category : 'BaselineOfBlueskyAPI',
-	#package : 'BaselineOfBlueskyAPI'
+	#category : 'BaselineOfBlueskyPharo',
+	#package : 'BaselineOfBlueskyPharo'
 }
 
 { #category : 'baselines' }
