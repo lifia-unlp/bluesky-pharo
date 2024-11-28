@@ -26,4 +26,7 @@ apikey := BlueskyApi new apikeyForDid: did withPassword: appPassword.
 
 "Get a user's feed"
 posts := BlueskyApi new feedForHandle: 'el.casco.com.ar' withApikey: apikey andLimit: 10.
+
+"Post on a user's feed"
+response := BlueskyApi new postText: 'Hello from Pharo!' onDid: did withApikey: apikey.
 ```
